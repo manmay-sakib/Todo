@@ -1,4 +1,4 @@
-package com.example.todo
+package com.example.todo.feature_todo.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
