@@ -26,7 +26,7 @@ fun TodoItem.toRemoteTodoItem(): RemoteTodoItem {
     )
 }
 
-fun LocalTodoItem.TodoItem(): TodoItem{
+fun LocalTodoItem.toTodoItem(): TodoItem{
     return TodoItem(
         title = title,
         description = description,
