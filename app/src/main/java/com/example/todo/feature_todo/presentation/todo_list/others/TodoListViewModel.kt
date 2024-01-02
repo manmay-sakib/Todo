@@ -1,4 +1,4 @@
-package com.example.todo.feature_todo.presentation.todo_list.components
+package com.example.todo.feature_todo.presentation.todo_list.others
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -8,6 +8,8 @@ import com.example.todo.core.util.TodoListString
 import com.example.todo.feature_todo.data.di.IoDispatcher
 import com.example.todo.feature_todo.domain.model.TodoItem
 import com.example.todo.feature_todo.domain.use_case.TodoUseCases
+import com.example.todo.feature_todo.presentation.todo_list.others.TodoListEvent
+import com.example.todo.feature_todo.presentation.todo_list.others.TodoListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler

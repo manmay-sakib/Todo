@@ -1,4 +1,4 @@
-package com.example.todo.feature_todo.presentation.todo_list.components
+package com.example.todo.feature_todo.presentation.todo_list.others
 
 import com.example.todo.feature_todo.domain.model.TodoItem
 import com.example.todo.feature_todo.domain.util.TodoItemOrder
