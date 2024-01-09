@@ -14,6 +14,8 @@ object TodoListStrings{
     const val SORT_DOWN = "Sort Down"
     const val SHOW_ARCHIVED = "Show Archived"
     const val SORT_BY = "Sort By"
+    const val TODO_ITEM_DELETED = "Todo Item has been deleted"
+    const val UNDO = "Undo"
 }
 
 object ContentDescription{
@@ -21,4 +23,8 @@ object ContentDescription{
     const val COMPLETE_TODO_ITEM = "Complete Todo Item"
     const val ARCHIVE_TODO_ITEM = "Archive Todo Item"
     const val SELECTED = "Selected"
+    const val ADD_TODO = "Add Todo Item"
+    const val SORTING_MENU = "Sorting Menu"
+    const val BACKGROUND_IMAGE = "Background Image"
+    const val LOADING_INDICATOR = "Loading"
 }

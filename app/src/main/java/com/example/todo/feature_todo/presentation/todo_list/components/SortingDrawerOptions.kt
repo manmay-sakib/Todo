@@ -4,7 +4,8 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.runtime.Composable
-import com.example.todo.core.util.TodoListString
+import com.example.todo.core.util.TodoListStrings
+import com.example.todo.feature_todo.domain.model.TodoItem
 import com.example.todo.feature_todo.domain.util.SortingDirection
 import com.example.todo.feature_todo.domain.util.TodoItemOrder
 
@@ -18,7 +19,7 @@ fun SortingDrawerOptions(
     NavigationDrawerItem(
         label = {
                 IconRow(
-                    text = TodoListString.TITLE,
+                    text = TodoListStrings.TITLE,
                     isChecked = titleSelected
                 )
         },
@@ -32,7 +33,7 @@ fun SortingDrawerOptions(
     NavigationDrawerItem(
         label = {
             IconRow(
-                text = TodoListString.TIME,
+                text = TodoListStrings.TIME,
                 isChecked = timeSelected
             )
         },
@@ -46,7 +47,7 @@ fun SortingDrawerOptions(
     NavigationDrawerItem(
         label = {
             IconRow(
-                text = TodoListString.COMPLETED,
+                text = TodoListStrings.COMPLETED,
                 isChecked = completedSelected
             )
         },
@@ -62,7 +63,7 @@ fun SortingDrawerOptions(
     NavigationDrawerItem(
         label = {
             IconRow(
-                text = TodoListString.SORT_DOWN,
+                text = TodoListStrings.SORT_DOWN,
                 isChecked = sortDownSelected
             )
         },
@@ -76,13 +77,24 @@ fun SortingDrawerOptions(
     NavigationDrawerItem(
         label = {
             IconRow(
-                text = TodoListString.SORT_UP,
+                text = TodoListStrings.SORT_UP,
                 isChecked = sortUpSelected
             )
         },
         selected = false,
         onClick = {
             onOrderChange(todoItemOrder.copy(SortingDirection.Up, todoItemOrder.showArchived))
+        }
+    )
+    Divider()
+
+    NavigationDrawerItem(
+        label = { 
+                IconRow(text = TodoListStrings.SHOW_ARCHIVED, isChecked = todoItemOrder.showArchived)
+        },
+        selected = false,
+        onClick = {
+            onOrderChange(todoItemOrder.copy(todoItemOrder.sortingDirection, !todoItemOrder.showArchived))
         }
     )
 }
