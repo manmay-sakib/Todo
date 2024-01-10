@@ -28,6 +28,7 @@ import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberDrawerState
@@ -188,23 +189,31 @@ fun TodoListScreen(
                                   viewModel.onEvent(TodoListEvent.Delete(todo))
                                    scope.launch {
                                        val undo = snackbarHostState.showSnackbar(
-                                           message = "",
-                                           actionLabel = null
+                                           message = TodoListStrings.TODO_ITEM_DELETED,
+                                           actionLabel = TodoListStrings.UNDO
                                        )
+                                       if (undo == SnackbarResult.ActionPerformed){
+                                           viewModel.onEvent(TodoListEvent.UndoDelete)
+
+                                       }
                                    }
 
                                },
                                onCompleteClick = {
-                                                 viewModel.onEvent(TodoListEvent.ToggleCompleted.)
+                                   viewModel.onEvent(TodoListEvent.ToggleCompleted(todo))
 
                                },
                                onArchiveClick = {
+                                   viewModel.onEvent(TodoListEvent.ToggleArchived(todo))
 
-                               }) {
+                               },
+                               onCardClick = {
+                                  /* navController.navigate(
+                                  //TODO
 
-                           }
-
-
+                                   )*/
+                               }
+                           )
                        }
                     }
 
